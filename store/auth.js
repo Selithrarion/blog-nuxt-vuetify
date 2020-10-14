@@ -75,6 +75,5 @@ function isJWTValid(token) {
 	const exp = jwtData.exp || 0;
 
 	const time = Date.now() / 1000;
-	// console.log(time) to do;
 	return time < exp;
 }

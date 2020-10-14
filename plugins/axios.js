@@ -7,6 +7,8 @@ export default function ({ $axios, redirect, store }) {
 		return request;
 	});
 
+	$axios.defaults.baseURL = process.env.BASE_URL;
+
 	$axios.onError((error) => {
 		if (error.response) {
 			if (error.response.status === 401) {

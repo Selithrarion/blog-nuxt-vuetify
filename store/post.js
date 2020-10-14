@@ -46,9 +46,7 @@ const actions = {
 
 	async FETCH_POSTS({ commit }) {
 		try {
-			return await this.$axios.$get(
-				'https://iv27u.sse.codesandbox.io/api/post'
-			);
+			return await this.$axios.$get('/api/post');
 		} catch (error) {
 			commit('SET_ERROR', error, { root: true });
 			throw error;
@@ -56,9 +54,7 @@ const actions = {
 	},
 	async FETCH_BY_ID({ commit }, id) {
 		try {
-			return await this.$axios.$get(
-				`https://iv27u.sse.codesandbox.io/api/post/${id}`
-			);
+			return await this.$axios.$get(`/api/post/${id}`);
 		} catch (error) {
 			commit('SET_ERROR', error, { root: true });
 			throw error;
@@ -66,10 +62,9 @@ const actions = {
 	},
 	async ADD_VIEW({ commit }, { _id, views }) {
 		try {
-			return await this.$axios.$put(
-				`https://iv27u.sse.codesandbox.io/api/post/add/view/${_id}`,
-				{ views }
-			);
+			return await this.$axios.$put(`/api/post/add/view/${_id}`, {
+				views,
+			});
 		} catch (error) {
 			commit('SET_ERROR', error, { root: true });
 			throw error;
@@ -78,9 +73,7 @@ const actions = {
 
 	async GET_ANALYTICS({ commit }) {
 		try {
-			return await this.$axios.$get(
-				'https://iv27u.sse.codesandbox.io/api/post/admin/get/analytics'
-			);
+			return await this.$axios.$get('/api/post/admin/get/analytics');
 		} catch (error) {
 			commit('SET_ERROR', error, { root: true });
 			throw error;
