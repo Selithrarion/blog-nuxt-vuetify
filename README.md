@@ -1,4 +1,7 @@
-# vue-nuxt-blog
+# nuxt-vuetify-blog
+
+Demo: https://nuxt-blog-vuetify.herokuapp.com/
+
 
 ## Build Setup
 
